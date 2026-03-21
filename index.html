@@ -248,6 +248,205 @@
         ]
     }
     </script>
+
+    <!-- FieldFuze Lead Form Styles -->
+    <style>
+      .ff-form-card {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      }
+      .ff-form-card h2 {
+        font-size: 22px;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 4px;
+        line-height: 1.3;
+      }
+      .ff-form-card h2 .ff-accent { color: #E8616A; }
+      .ff-form-card .ff-subtitle {
+        font-size: 14px;
+        color: #9ca3af;
+        margin-bottom: 24px;
+      }
+      .ff-grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+      .ff-grid-3 {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+      .ff-field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .ff-field label {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #9ca3af;
+      }
+      .ff-field label .ff-req {
+        color: #E8616A;
+        margin-left: 2px;
+      }
+      .ff-field input, .ff-field textarea {
+        height: 46px;
+        padding: 0 12px;
+        border: 1.5px solid #3a3a4e;
+        border-radius: 8px;
+        font-size: 14px;
+        color: #ffffff;
+        background: #1C1C28;
+        outline: none;
+        transition: border-color 0.15s;
+        width: 100%;
+      }
+      .ff-field textarea {
+        height: 80px;
+        padding: 10px 12px;
+        resize: vertical;
+        font-family: inherit;
+      }
+      .ff-field input::placeholder, .ff-field textarea::placeholder { color: #6b7280; }
+      .ff-field input:focus, .ff-field textarea:focus { border-color: #E8616A; }
+      .ff-field input.ff-error, .ff-field textarea.ff-error { border-color: #ef4444; }
+      .ff-field .ff-field-error {
+        font-size: 11px;
+        color: #ef4444;
+        margin-top: 2px;
+        display: none;
+      }
+      .ff-field.ff-has-error .ff-field-error { display: block; }
+      .ff-radio-group {
+        margin-bottom: 16px;
+      }
+      .ff-radio-group .ff-radio-label {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #9ca3af;
+        margin-bottom: 10px;
+        display: block;
+      }
+      .ff-radio-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .ff-radio-row label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        color: #e5e7eb;
+        cursor: pointer;
+        user-select: none;
+      }
+      .ff-radio-row input[type="radio"] { display: none; }
+      .ff-radio-row .ff-radio-dot {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid #4a4a5e;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: border-color 0.15s;
+      }
+      .ff-radio-row .ff-radio-dot::after {
+        content: '';
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #E8616A;
+        opacity: 0;
+        transition: opacity 0.15s;
+      }
+      .ff-radio-row input[type="radio"]:checked + .ff-radio-dot {
+        border-color: #E8616A;
+      }
+      .ff-radio-row input[type="radio"]:checked + .ff-radio-dot::after {
+        opacity: 1;
+      }
+      .ff-radio-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 24px;
+      }
+      .ff-submit {
+        width: 100%;
+        padding: 16px;
+        background: #E8616A;
+        color: #fff;
+        border: none;
+        border-radius: 50px;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        margin-top: 24px;
+        transition: background 0.15s, opacity 0.15s;
+        letter-spacing: 0.01em;
+      }
+      .ff-submit:hover:not(:disabled) { background: #d4545d; }
+      .ff-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+      .ff-form-error {
+        margin-top: 12px;
+        font-size: 13px;
+        color: #ef4444;
+        text-align: center;
+        display: none;
+      }
+      .ff-form-error.ff-visible { display: block; }
+      .ff-consent {
+        margin-top: 14px;
+        font-size: 11px;
+        color: #6b7280;
+        line-height: 1.5;
+      }
+      .ff-success {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px 0;
+        gap: 12px;
+      }
+      .ff-success.ff-visible { display: flex; }
+      .ff-success-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: #E8616A;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        color: #fff;
+      }
+      .ff-success h3 {
+        font-size: 20px;
+        font-weight: 700;
+        color: #ffffff;
+      }
+      .ff-success p {
+        font-size: 14px;
+        color: #9ca3af;
+        max-width: 340px;
+      }
+      @media (max-width: 480px) {
+        .ff-grid-2, .ff-grid-3 { grid-template-columns: 1fr; }
+        .ff-radio-grid { grid-template-columns: 1fr; }
+      }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -931,43 +1130,133 @@
                     </div>
                 </div>
                 <div class="contact-form-wrapper">
-                    <form class="contact-form" id="contactForm">
-                        <h3>Request a Free Estimate</h3>
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required placeholder="John Smith">
+                    <div class="ff-form-card">
+                        <!-- Success state (hidden until submit) -->
+                        <div class="ff-success" id="ff-success">
+                            <div class="ff-success-icon">&#10003;</div>
+                            <h3>We'll be in touch shortly!</h3>
+                            <p>Thank you for reaching out. Our team will contact you soon to schedule your free estimate.</p>
                         </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">Email *</label>
-                                <input type="email" id="email" name="email" required placeholder="john@example.com">
+
+                        <!-- FieldFuze Lead Form -->
+                        <form id="ff-lead-form" novalidate>
+                            <h2>Get Your Free <span class="ff-accent">Fence Estimate</span></h2>
+                            <p class="ff-subtitle">Takes under 30 seconds. No obligation.</p>
+
+                            <!-- Row 1: Name + Phone -->
+                            <div class="ff-grid-2">
+                                <div class="ff-field" id="field-name">
+                                    <label>Full Name <span class="ff-req">*</span></label>
+                                    <input type="text" id="ff-name" name="name" placeholder="Your name" autocomplete="name">
+                                    <span class="ff-field-error">Name is required</span>
+                                </div>
+                                <div class="ff-field" id="field-phone">
+                                    <label>Phone <span class="ff-req">*</span></label>
+                                    <input type="tel" id="ff-phone" name="phone" placeholder="(907) 555-0123" autocomplete="tel">
+                                    <span class="ff-field-error">Phone is required</span>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="phone">Phone *</label>
-                                <input type="tel" id="phone" name="phone" required placeholder="(907) 555-0123">
+
+                            <!-- Row 2: Email + Street -->
+                            <div class="ff-grid-2">
+                                <div class="ff-field" id="field-email">
+                                    <label>Email <span class="ff-req">*</span></label>
+                                    <input type="email" id="ff-email" name="email" placeholder="you@email.com" autocomplete="email">
+                                    <span class="ff-field-error">Email is required</span>
+                                </div>
+                                <div class="ff-field" id="field-street">
+                                    <label>Street Address <span class="ff-req">*</span></label>
+                                    <input type="text" id="ff-street" name="street" placeholder="123 Main St" autocomplete="street-address">
+                                    <span class="ff-field-error">Street address is required</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Service Needed *</label>
-                            <select id="service" name="service" required>
-                                <option value="">Select a service...</option>
-                                <option value="cedar">Cedar Fencing</option>
-                                <option value="chainlink">Chain Link Fencing</option>
-                                <option value="ornamental">Ornamental Fencing</option>
-                                <option value="repair">Fence Repair</option>
-                                <option value="other">Other / Not Sure</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Project Details</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your project (fence length, property type, timeline, etc.)"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full">
-                            Send Request
-                            <span class="btn-arrow">&rarr;</span>
-                        </button>
-                        <p class="form-note">We'll respond within 24 hours with your free estimate.</p>
-                    </form>
+
+                            <!-- Row 3: City + State + Zip -->
+                            <div class="ff-grid-3">
+                                <div class="ff-field" id="field-city">
+                                    <label>City <span class="ff-req">*</span></label>
+                                    <input type="text" id="ff-city" name="city" placeholder="Anchorage" autocomplete="address-level2">
+                                    <span class="ff-field-error">City is required</span>
+                                </div>
+                                <div class="ff-field" id="field-state">
+                                    <label>State <span class="ff-req">*</span></label>
+                                    <input type="text" id="ff-state" name="state" placeholder="AK" maxlength="2" autocomplete="address-level1">
+                                    <span class="ff-field-error">State is required</span>
+                                </div>
+                                <div class="ff-field" id="field-zip">
+                                    <label>Zip <span class="ff-req">*</span></label>
+                                    <input type="text" id="ff-zip" name="zip" placeholder="99501" maxlength="10" autocomplete="postal-code">
+                                    <span class="ff-field-error">Zip is required</span>
+                                </div>
+                            </div>
+
+                            <!-- Property Type -->
+                            <div class="ff-radio-group">
+                                <span class="ff-radio-label">Property Type</span>
+                                <div class="ff-radio-row">
+                                    <label>
+                                        <input type="radio" name="propertyType" value="Residential" checked>
+                                        <span class="ff-radio-dot"></span>
+                                        Residential
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="propertyType" value="Commercial">
+                                        <span class="ff-radio-dot"></span>
+                                        Commercial
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Fence Type -->
+                            <div class="ff-radio-group">
+                                <span class="ff-radio-label">Fence Type</span>
+                                <div class="ff-radio-row ff-radio-grid">
+                                    <label>
+                                        <input type="radio" name="projectType" value="Cedar Fence" checked>
+                                        <span class="ff-radio-dot"></span>
+                                        Cedar Fence
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="projectType" value="Chain Link">
+                                        <span class="ff-radio-dot"></span>
+                                        Chain Link
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="projectType" value="Ornamental">
+                                        <span class="ff-radio-dot"></span>
+                                        Ornamental
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="projectType" value="Fence Repair">
+                                        <span class="ff-radio-dot"></span>
+                                        Fence Repair
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="projectType" value="Gate / Access">
+                                        <span class="ff-radio-dot"></span>
+                                        Gate / Access
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="projectType" value="Not Sure">
+                                        <span class="ff-radio-dot"></span>
+                                        Not Sure
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="ff-submit" id="ff-submit-btn">Get Free Estimate</button>
+
+                            <div class="ff-form-error" id="ff-form-error">
+                                Something went wrong. Please try again or call us at (907) 302-1819.
+                            </div>
+
+                            <p class="ff-consent">
+                                By submitting, I consent to marketing calls &amp; texts from Maisey Fence LLC,
+                                including automated, prerecorded, or AI-voice messages.
+                                Msg/data rates may apply. Opt out anytime (STOP or DNC).
+                            </p>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1023,5 +1312,104 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- FieldFuze Lead Form Script -->
+    <script>
+      // ── CONFIG ──
+      const FIELDFUZE_ORG_ID = '0e1610bef796487b98ad';
+      const FIELDFUZE_ENDPOINT = 'https://bk3y7lhnb9.execute-api.us-east-2.amazonaws.com/dev/leads/webform';
+
+      const ffForm      = document.getElementById('ff-lead-form');
+      const ffSubmitBtn = document.getElementById('ff-submit-btn');
+      const ffFormError = document.getElementById('ff-form-error');
+      const ffSuccess   = document.getElementById('ff-success');
+
+      function setFieldError(fieldId, hasError) {
+        const wrapper = document.getElementById(fieldId);
+        const input   = wrapper ? wrapper.querySelector('input') : null;
+        if (!wrapper) return;
+        if (hasError) {
+          wrapper.classList.add('ff-has-error');
+          if (input) input.classList.add('ff-error');
+        } else {
+          wrapper.classList.remove('ff-has-error');
+          if (input) input.classList.remove('ff-error');
+        }
+      }
+
+      // Clear field error on input
+      document.getElementById('ff-name').addEventListener('input',   () => setFieldError('field-name',   false));
+      document.getElementById('ff-phone').addEventListener('input',  () => setFieldError('field-phone',  false));
+      document.getElementById('ff-email').addEventListener('input',  () => setFieldError('field-email',  false));
+      document.getElementById('ff-street').addEventListener('input', () => setFieldError('field-street', false));
+      document.getElementById('ff-city').addEventListener('input',   () => setFieldError('field-city',   false));
+      document.getElementById('ff-state').addEventListener('input',  () => setFieldError('field-state',  false));
+      document.getElementById('ff-zip').addEventListener('input',    () => setFieldError('field-zip',    false));
+
+      ffForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Client-side validation
+        const name   = document.getElementById('ff-name').value.trim();
+        const phone  = document.getElementById('ff-phone').value.trim();
+        const email  = document.getElementById('ff-email').value.trim();
+        const street = document.getElementById('ff-street').value.trim();
+        const city   = document.getElementById('ff-city').value.trim();
+        const state  = document.getElementById('ff-state').value.trim();
+        const zip    = document.getElementById('ff-zip').value.trim();
+        let valid = true;
+
+        if (!name)   { setFieldError('field-name',   true); valid = false; }
+        if (!phone)  { setFieldError('field-phone',  true); valid = false; }
+        if (!email)  { setFieldError('field-email',  true); valid = false; }
+        if (!street) { setFieldError('field-street', true); valid = false; }
+        if (!city)   { setFieldError('field-city',   true); valid = false; }
+        if (!state)  { setFieldError('field-state',  true); valid = false; }
+        if (!zip)    { setFieldError('field-zip',    true); valid = false; }
+        if (!valid) return;
+
+        // Get selected radio values
+        const propertyType = (ffForm.querySelector('input[name="propertyType"]:checked') || {}).value || '';
+        const projectType  = (ffForm.querySelector('input[name="projectType"]:checked')  || {}).value || '';
+
+        // Loading state
+        ffSubmitBtn.disabled    = true;
+        ffSubmitBtn.textContent = 'Sending...';
+        ffFormError.classList.remove('ff-visible');
+
+        try {
+          const res = await fetch(`${FIELDFUZE_ENDPOINT}?orgID=${FIELDFUZE_ORG_ID}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name,
+              phone,
+              email,
+              street,
+              city,
+              state,
+              zip,
+              propertyType,
+              projectType,
+            })
+          });
+
+          const data = await res.json();
+
+          if (res.ok && data.success) {
+            // Show success, hide form
+            ffForm.style.display   = 'none';
+            ffSuccess.classList.add('ff-visible');
+          } else {
+            throw new Error(data.error || 'Submission failed');
+          }
+        } catch (err) {
+          console.error('Form submission error:', err);
+          ffFormError.classList.add('ff-visible');
+          ffSubmitBtn.disabled    = false;
+          ffSubmitBtn.textContent = 'Get Free Estimate';
+        }
+      });
+    </script>
 </body>
 </html>

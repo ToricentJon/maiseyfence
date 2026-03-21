@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initMobileMenu();
     initScrollAnimations();
     initGalleryFilter();
-    initContactForm();
+    // FieldFuze form handled via inline script in index.html
     initSmoothScroll();
     initCounterAnimation();
     initTestimonialsCarousel();
@@ -135,47 +135,8 @@ function initGalleryFilter() {
 }
 
 /**
- * Contact form handling
+ * Contact form handling — now powered by FieldFuze (inline script in index.html)
  */
-function initContactForm() {
-    const form = document.getElementById('contactForm');
-
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // Get form data
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
-
-            // Basic validation
-            if (!data.name || !data.email || !data.phone || !data.service) {
-                showNotification('Please fill in all required fields.', 'error');
-                return;
-            }
-
-            // Email validation
-            if (!isValidEmail(data.email)) {
-                showNotification('Please enter a valid email address.', 'error');
-                return;
-            }
-
-            // Simulate form submission
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = 'Sending...';
-            submitBtn.disabled = true;
-
-            // Simulate API call
-            setTimeout(() => {
-                showNotification('Thank you! We\'ll contact you within 24 hours.', 'success');
-                form.reset();
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }, 1500);
-        });
-    }
-}
 
 /**
  * Email validation helper
