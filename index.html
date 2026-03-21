@@ -249,204 +249,7 @@
     }
     </script>
 
-    <!-- FieldFuze Lead Form Styles -->
-    <style>
-      .ff-form-card {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      }
-      .ff-form-card h2 {
-        font-size: 22px;
-        font-weight: 700;
-        color: #ffffff;
-        margin-bottom: 4px;
-        line-height: 1.3;
-      }
-      .ff-form-card h2 .ff-accent { color: #E8616A; }
-      .ff-form-card .ff-subtitle {
-        font-size: 14px;
-        color: #9ca3af;
-        margin-bottom: 24px;
-      }
-      .ff-grid-2 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
-        margin-bottom: 16px;
-      }
-      .ff-grid-3 {
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr;
-        gap: 16px;
-        margin-bottom: 16px;
-      }
-      .ff-field {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-      }
-      .ff-field label {
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: #9ca3af;
-      }
-      .ff-field label .ff-req {
-        color: #E8616A;
-        margin-left: 2px;
-      }
-      .ff-field input, .ff-field textarea {
-        height: 46px;
-        padding: 0 12px;
-        border: 1.5px solid #3a3a4e;
-        border-radius: 8px;
-        font-size: 14px;
-        color: #ffffff;
-        background: #1C1C28;
-        outline: none;
-        transition: border-color 0.15s;
-        width: 100%;
-      }
-      .ff-field textarea {
-        height: 80px;
-        padding: 10px 12px;
-        resize: vertical;
-        font-family: inherit;
-      }
-      .ff-field input::placeholder, .ff-field textarea::placeholder { color: #6b7280; }
-      .ff-field input:focus, .ff-field textarea:focus { border-color: #E8616A; }
-      .ff-field input.ff-error, .ff-field textarea.ff-error { border-color: #ef4444; }
-      .ff-field .ff-field-error {
-        font-size: 11px;
-        color: #ef4444;
-        margin-top: 2px;
-        display: none;
-      }
-      .ff-field.ff-has-error .ff-field-error { display: block; }
-      .ff-radio-group {
-        margin-bottom: 16px;
-      }
-      .ff-radio-group .ff-radio-label {
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: #9ca3af;
-        margin-bottom: 10px;
-        display: block;
-      }
-      .ff-radio-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-      }
-      .ff-radio-row label {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 14px;
-        color: #e5e7eb;
-        cursor: pointer;
-        user-select: none;
-      }
-      .ff-radio-row input[type="radio"] { display: none; }
-      .ff-radio-row .ff-radio-dot {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        border: 2px solid #4a4a5e;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        transition: border-color 0.15s;
-      }
-      .ff-radio-row .ff-radio-dot::after {
-        content: '';
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: #E8616A;
-        opacity: 0;
-        transition: opacity 0.15s;
-      }
-      .ff-radio-row input[type="radio"]:checked + .ff-radio-dot {
-        border-color: #E8616A;
-      }
-      .ff-radio-row input[type="radio"]:checked + .ff-radio-dot::after {
-        opacity: 1;
-      }
-      .ff-radio-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px 24px;
-      }
-      .ff-submit {
-        width: 100%;
-        padding: 16px;
-        background: #E8616A;
-        color: #fff;
-        border: none;
-        border-radius: 50px;
-        font-size: 16px;
-        font-weight: 700;
-        cursor: pointer;
-        margin-top: 24px;
-        transition: background 0.15s, opacity 0.15s;
-        letter-spacing: 0.01em;
-      }
-      .ff-submit:hover:not(:disabled) { background: #d4545d; }
-      .ff-submit:disabled { opacity: 0.7; cursor: not-allowed; }
-      .ff-form-error {
-        margin-top: 12px;
-        font-size: 13px;
-        color: #ef4444;
-        text-align: center;
-        display: none;
-      }
-      .ff-form-error.ff-visible { display: block; }
-      .ff-consent {
-        margin-top: 14px;
-        font-size: 11px;
-        color: #6b7280;
-        line-height: 1.5;
-      }
-      .ff-success {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 20px 0;
-        gap: 12px;
-      }
-      .ff-success.ff-visible { display: flex; }
-      .ff-success-icon {
-        width: 56px;
-        height: 56px;
-        border-radius: 50%;
-        background: #E8616A;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 26px;
-        color: #fff;
-      }
-      .ff-success h3 {
-        font-size: 20px;
-        font-weight: 700;
-        color: #ffffff;
-      }
-      .ff-success p {
-        font-size: 14px;
-        color: #9ca3af;
-        max-width: 340px;
-      }
-      @media (max-width: 480px) {
-        .ff-grid-2, .ff-grid-3 { grid-template-columns: 1fr; }
-        .ff-radio-grid { grid-template-columns: 1fr; }
-      }
-    </style>
+    <link rel="stylesheet" href="fieldfuze-form.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -456,11 +259,29 @@
                 <img src="images/Maisey-Logo.avif" alt="Maisey Fence LLC" class="logo-img">
             </a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#membership">Membership</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="/">Home</a></li>
+                <li class="nav-dropdown">
+                    <a href="#services" class="nav-dropdown-toggle">Services <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="/services/cedar-fencing.html">Cedar Fencing</a></li>
+                        <li><a href="/services/chain-link-fencing.html">Chain Link Fencing</a></li>
+                        <li><a href="/services/ornamental-fencing.html">Ornamental Fencing</a></li>
+                        <li><a href="/services/fence-repair.html">Fence Repair</a></li>
+                        <li><a href="/services/gates-and-access.html">Gates &amp; Access</a></li>
+                        <li><a href="/services/commercial-fencing.html">Commercial Fencing</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-dropdown-toggle">Areas <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="/areas/anchorage.html">Anchorage</a></li>
+                        <li><a href="/areas/eagle-river.html">Eagle River</a></li>
+                        <li><a href="/areas/palmer.html">Palmer</a></li>
+                        <li><a href="/areas/wasilla.html">Wasilla</a></li>
+                    </ul>
+                </li>
+                <li><a href="/maisey-latch.html">Maisey Latch</a></li>
+                <li><a href="/blog/">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <a href="tel:9073021819" class="nav-cta">
@@ -474,6 +295,12 @@
             </button>
         </div>
     </nav>
+
+    <!-- Sticky Floating CTA -->
+    <a href="#contact" class="floating-cta" id="floatingCta" aria-label="Get Free Estimate">
+        <span class="floating-cta-icon">&#9993;</span>
+        <span class="floating-cta-text">Free Estimate</span>
+    </a>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -521,6 +348,22 @@
         </div>
     </section>
 
+    <!-- Quick Contact Bar -->
+    <section class="quick-contact-bar">
+        <div class="container">
+            <div class="quick-contact-inner">
+                <div class="quick-contact-text">
+                    <strong>Ready for your free fence estimate?</strong>
+                    <span>30+ years experience &bull; Free on-site estimates &bull; Financing available</span>
+                </div>
+                <div class="quick-contact-actions">
+                    <a href="tel:9073021819" class="btn btn-light btn-sm"><span class="phone-icon">&#9742;</span> (907) 302-1819</a>
+                    <a href="#contact" class="btn btn-primary btn-sm">Get Free Estimate &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
@@ -554,7 +397,7 @@
                         <li>Minimal maintenance</li>
                         <li>Various heights available</li>
                     </ul>
-                    <a href="#contact" class="service-link">Learn More <span>&rarr;</span></a>
+                    <a href="/services/chain-link-fencing.html" class="service-link">Learn More <span>&rarr;</span></a>
                 </div>
                 <div class="service-card featured">
                     <div class="featured-badge">Most Popular</div>
@@ -580,7 +423,7 @@
                         <li>Privacy & security</li>
                         <li>Classic aesthetic</li>
                     </ul>
-                    <a href="#contact" class="service-link">Learn More <span>&rarr;</span></a>
+                    <a href="/services/cedar-fencing.html" class="service-link">Learn More <span>&rarr;</span></a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -602,7 +445,7 @@
                         <li>Rust-resistant options</li>
                         <li>Customizable styles</li>
                     </ul>
-                    <a href="#contact" class="service-link">Learn More <span>&rarr;</span></a>
+                    <a href="/services/ornamental-fencing.html" class="service-link">Learn More <span>&rarr;</span></a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -622,7 +465,7 @@
                         <li>Storm damage repair</li>
                         <li>Fast turnaround</li>
                     </ul>
-                    <a href="#contact" class="service-link">Learn More <span>&rarr;</span></a>
+                    <a href="/services/fence-repair.html" class="service-link">Learn More <span>&rarr;</span></a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -648,7 +491,7 @@
                         <li>Manual gate options</li>
                         <li>Security solutions</li>
                     </ul>
-                    <a href="#contact" class="service-link">Learn More <span>&rarr;</span></a>
+                    <a href="/services/gates-and-access.html" class="service-link">Learn More <span>&rarr;</span></a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -670,7 +513,7 @@
                         <li>Large-scale projects</li>
                         <li>Code compliant</li>
                     </ul>
-                    <a href="#contact" class="service-link">Learn More <span>&rarr;</span></a>
+                    <a href="/services/commercial-fencing.html" class="service-link">Learn More <span>&rarr;</span></a>
                 </div>
             </div>
         </div>
@@ -1281,19 +1124,31 @@
                 <div class="footer-links">
                     <h4>Services</h4>
                     <ul>
-                        <li><a href="#services">Cedar Fencing</a></li>
-                        <li><a href="#services">Chain Link Fencing</a></li>
-                        <li><a href="#services">Ornamental Fencing</a></li>
-                        <li><a href="#services">Fence Repair</a></li>
+                        <li><a href="/services/cedar-fencing.html">Cedar Fencing</a></li>
+                        <li><a href="/services/chain-link-fencing.html">Chain Link Fencing</a></li>
+                        <li><a href="/services/ornamental-fencing.html">Ornamental Fencing</a></li>
+                        <li><a href="/services/fence-repair.html">Fence Repair</a></li>
+                        <li><a href="/services/gates-and-access.html">Gates &amp; Access</a></li>
+                        <li><a href="/services/commercial-fencing.html">Commercial Fencing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Service Areas</h4>
+                    <ul>
+                        <li><a href="/areas/anchorage.html">Anchorage</a></li>
+                        <li><a href="/areas/eagle-river.html">Eagle River</a></li>
+                        <li><a href="/areas/palmer.html">Palmer</a></li>
+                        <li><a href="/areas/wasilla.html">Wasilla</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Company</h4>
                     <ul>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#testimonials">Reviews</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="/#about">About Us</a></li>
+                        <li><a href="/#gallery">Gallery</a></li>
+                        <li><a href="/#testimonials">Reviews</a></li>
+                        <li><a href="/maisey-latch.html">Maisey Latch</a></li>
+                        <li><a href="/blog/">Blog</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
@@ -1313,103 +1168,6 @@
 
     <script src="script.js"></script>
 
-    <!-- FieldFuze Lead Form Script -->
-    <script>
-      // ── CONFIG ──
-      const FIELDFUZE_ORG_ID = '0e1610bef796487b98ad';
-      const FIELDFUZE_ENDPOINT = 'https://bk3y7lhnb9.execute-api.us-east-2.amazonaws.com/dev/leads/webform';
-
-      const ffForm      = document.getElementById('ff-lead-form');
-      const ffSubmitBtn = document.getElementById('ff-submit-btn');
-      const ffFormError = document.getElementById('ff-form-error');
-      const ffSuccess   = document.getElementById('ff-success');
-
-      function setFieldError(fieldId, hasError) {
-        const wrapper = document.getElementById(fieldId);
-        const input   = wrapper ? wrapper.querySelector('input') : null;
-        if (!wrapper) return;
-        if (hasError) {
-          wrapper.classList.add('ff-has-error');
-          if (input) input.classList.add('ff-error');
-        } else {
-          wrapper.classList.remove('ff-has-error');
-          if (input) input.classList.remove('ff-error');
-        }
-      }
-
-      // Clear field error on input
-      document.getElementById('ff-name').addEventListener('input',   () => setFieldError('field-name',   false));
-      document.getElementById('ff-phone').addEventListener('input',  () => setFieldError('field-phone',  false));
-      document.getElementById('ff-email').addEventListener('input',  () => setFieldError('field-email',  false));
-      document.getElementById('ff-street').addEventListener('input', () => setFieldError('field-street', false));
-      document.getElementById('ff-city').addEventListener('input',   () => setFieldError('field-city',   false));
-      document.getElementById('ff-state').addEventListener('input',  () => setFieldError('field-state',  false));
-      document.getElementById('ff-zip').addEventListener('input',    () => setFieldError('field-zip',    false));
-
-      ffForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        // Client-side validation
-        const name   = document.getElementById('ff-name').value.trim();
-        const phone  = document.getElementById('ff-phone').value.trim();
-        const email  = document.getElementById('ff-email').value.trim();
-        const street = document.getElementById('ff-street').value.trim();
-        const city   = document.getElementById('ff-city').value.trim();
-        const state  = document.getElementById('ff-state').value.trim();
-        const zip    = document.getElementById('ff-zip').value.trim();
-        let valid = true;
-
-        if (!name)   { setFieldError('field-name',   true); valid = false; }
-        if (!phone)  { setFieldError('field-phone',  true); valid = false; }
-        if (!email)  { setFieldError('field-email',  true); valid = false; }
-        if (!street) { setFieldError('field-street', true); valid = false; }
-        if (!city)   { setFieldError('field-city',   true); valid = false; }
-        if (!state)  { setFieldError('field-state',  true); valid = false; }
-        if (!zip)    { setFieldError('field-zip',    true); valid = false; }
-        if (!valid) return;
-
-        // Get selected radio values
-        const propertyType = (ffForm.querySelector('input[name="propertyType"]:checked') || {}).value || '';
-        const projectType  = (ffForm.querySelector('input[name="projectType"]:checked')  || {}).value || '';
-
-        // Loading state
-        ffSubmitBtn.disabled    = true;
-        ffSubmitBtn.textContent = 'Sending...';
-        ffFormError.classList.remove('ff-visible');
-
-        try {
-          const res = await fetch(`${FIELDFUZE_ENDPOINT}?orgID=${FIELDFUZE_ORG_ID}`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              name,
-              phone,
-              email,
-              street,
-              city,
-              state,
-              zip,
-              propertyType,
-              projectType,
-            })
-          });
-
-          const data = await res.json();
-
-          if (res.ok && data.success) {
-            // Show success, hide form
-            ffForm.style.display   = 'none';
-            ffSuccess.classList.add('ff-visible');
-          } else {
-            throw new Error(data.error || 'Submission failed');
-          }
-        } catch (err) {
-          console.error('Form submission error:', err);
-          ffFormError.classList.add('ff-visible');
-          ffSubmitBtn.disabled    = false;
-          ffSubmitBtn.textContent = 'Get Free Estimate';
-        }
-      });
-    </script>
+    <script src="fieldfuze-form.js"></script>
 </body>
 </html>

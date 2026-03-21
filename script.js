@@ -7,12 +7,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize all components
     initNavbar();
     initMobileMenu();
+    initDropdownNav();
     initScrollAnimations();
     initGalleryFilter();
-    // FieldFuze form handled via inline script in index.html
     initSmoothScroll();
     initCounterAnimation();
     initTestimonialsCarousel();
+    initFaqAccordion();
 });
 
 /**
@@ -314,6 +315,21 @@ window.addEventListener('scroll', () => {
 });
 
 /**
+ * Floating CTA visibility
+ */
+(function() {
+    const floatingCta = document.getElementById('floatingCta');
+    if (!floatingCta) return;
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 600) {
+            floatingCta.classList.add('visible');
+        } else {
+            floatingCta.classList.remove('visible');
+        }
+    });
+})();
+
+/**
  * Add loading state to page
  */
 window.addEventListener('load', () => {
@@ -423,4 +439,56 @@ function initTestimonialsCarousel() {
     createDots();
     updateCarousel();
     startAutoPlay();
+}
+
+/**
+ * Dropdown navigation for mobile
+ */
+function initDropdownNav() {
+    const dropdowns = document.querySelectorAll('.nav-dropdown');
+    if (!dropdowns.length) return;
+
+    // On mobile, toggle dropdown on click
+    dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+        if (!toggle) return;
+
+        toggle.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                dropdown.classList.toggle('open');
+            }
+        });
+    });
+}
+
+/**
+ * FAQ accordion
+ */
+function initFaqAccordion() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    if (!faqItems.length) return;
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        if (!question || !answer) return;
+
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+
+            // Close all
+            faqItems.forEach(other => {
+                other.classList.remove('active');
+                const otherAnswer = other.querySelector('.faq-answer');
+                if (otherAnswer) otherAnswer.style.maxHeight = '0';
+            });
+
+            // Open clicked (if was closed)
+            if (!isActive) {
+                item.classList.add('active');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+        });
+    });
 }

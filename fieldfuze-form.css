@@ -1,0 +1,195 @@
+.ff-form-card {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+.ff-form-card h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+.ff-form-card h2 .ff-accent { color: #E8616A; }
+.ff-form-card .ff-subtitle {
+  font-size: 14px;
+  color: #9ca3af;
+  margin-bottom: 24px;
+}
+.ff-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.ff-grid-3 {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.ff-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.ff-field label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9ca3af;
+}
+.ff-field label .ff-req {
+  color: #E8616A;
+  margin-left: 2px;
+}
+.ff-field input, .ff-field textarea {
+  height: 46px;
+  padding: 0 12px;
+  border: 1.5px solid #3a3a4e;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #ffffff;
+  background: #1C1C28;
+  outline: none;
+  transition: border-color 0.15s;
+  width: 100%;
+}
+.ff-field textarea {
+  height: 80px;
+  padding: 10px 12px;
+  resize: vertical;
+  font-family: inherit;
+}
+.ff-field input::placeholder, .ff-field textarea::placeholder { color: #6b7280; }
+.ff-field input:focus, .ff-field textarea:focus { border-color: #E8616A; }
+.ff-field input.ff-error, .ff-field textarea.ff-error { border-color: #ef4444; }
+.ff-field .ff-field-error {
+  font-size: 11px;
+  color: #ef4444;
+  margin-top: 2px;
+  display: none;
+}
+.ff-field.ff-has-error .ff-field-error { display: block; }
+.ff-radio-group {
+  margin-bottom: 16px;
+}
+.ff-radio-group .ff-radio-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin-bottom: 10px;
+  display: block;
+}
+.ff-radio-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.ff-radio-row label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #e5e7eb;
+  cursor: pointer;
+  user-select: none;
+}
+.ff-radio-row input[type="radio"] { display: none; }
+.ff-radio-row .ff-radio-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #4a4a5e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.15s;
+}
+.ff-radio-row .ff-radio-dot::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #E8616A;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.ff-radio-row input[type="radio"]:checked + .ff-radio-dot {
+  border-color: #E8616A;
+}
+.ff-radio-row input[type="radio"]:checked + .ff-radio-dot::after {
+  opacity: 1;
+}
+.ff-radio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 24px;
+}
+.ff-submit {
+  width: 100%;
+  padding: 16px;
+  background: #E8616A;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 24px;
+  transition: background 0.15s, opacity 0.15s;
+  letter-spacing: 0.01em;
+}
+.ff-submit:hover:not(:disabled) { background: #d4545d; }
+.ff-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+.ff-form-error {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #ef4444;
+  text-align: center;
+  display: none;
+}
+.ff-form-error.ff-visible { display: block; }
+.ff-consent {
+  margin-top: 14px;
+  font-size: 11px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+.ff-success {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px 0;
+  gap: 12px;
+}
+.ff-success.ff-visible { display: flex; }
+.ff-success-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #E8616A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: #fff;
+}
+.ff-success h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+.ff-success p {
+  font-size: 14px;
+  color: #9ca3af;
+  max-width: 340px;
+}
+@media (max-width: 480px) {
+  .ff-grid-2, .ff-grid-3 { grid-template-columns: 1fr; }
+  .ff-radio-grid { grid-template-columns: 1fr; }
+}
