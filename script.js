@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initCounterAnimation();
     initTestimonialsCarousel();
     initFaqAccordion();
+    initSubpageAlternatingBg();
 });
 
 /**
@@ -72,7 +73,7 @@ function initMobileMenu() {
  * Scroll-triggered animations
  */
 function initScrollAnimations() {
-    const animatedElements = document.querySelectorAll('.service-card, .testimonial-card, .about-feature, .gallery-item');
+    const animatedElements = document.querySelectorAll('.service-card, .testimonial-card, .about-feature, .gallery-item, .process-step, .related-card, .blog-card, .faq-item, .neighborhood-item');
 
     // Add animate-on-scroll class to elements
     animatedElements.forEach(el => {
@@ -459,6 +460,18 @@ function initDropdownNav() {
                 dropdown.classList.toggle('open');
             }
         });
+    });
+}
+
+/**
+ * Alternate content-section backgrounds on subpages
+ */
+function initSubpageAlternatingBg() {
+    const sections = document.querySelectorAll('.content-section');
+    sections.forEach((section, index) => {
+        if (index % 2 === 1) {
+            section.classList.add('alt-bg');
+        }
     });
 }
 
