@@ -174,21 +174,6 @@
     }
     </script>
 
-    <!-- Structured Data: Website -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Maisey Fence LLC",
-        "url": "https://maiseyfence.com",
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://maiseyfence.com/?s={search_term_string}",
-            "query-input": "required name=search_term_string"
-        }
-    }
-    </script>
-
     <!-- Structured Data: Organization -->
     <script type="application/ld+json">
     {
@@ -249,6 +234,7 @@
     }
     </script>
 
+    <link rel="preload" as="image" href="images/hero-dog.webp" fetchpriority="high">
     <link rel="stylesheet" href="fieldfuze-form.css">
 </head>
 <body>
@@ -284,6 +270,7 @@
                 <li><a href="/blog/">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <a href="#contact" class="nav-estimate">Free Estimate</a>
             <a href="tel:9073021819" class="nav-cta">
                 <span class="phone-icon">&#9742;</span>
                 (907) 302-1819
@@ -305,7 +292,7 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-bg">
-            <img src="images/hero-dog.webp" alt="Happy dog safely contained behind quality Maisey Fence installation in Anchorage, Alaska" class="hero-bg-img">
+            <img src="images/hero-dog.webp" alt="Happy dog safely contained behind quality Maisey Fence installation in Anchorage, Alaska" class="hero-bg-img" fetchpriority="high">
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -525,10 +512,10 @@
             <div class="about-grid">
                 <div class="about-images">
                     <div class="about-img-main">
-                        <img src="images/hero-dog.webp" alt="Pet-safe fencing solutions by Maisey Fence - keeping Alaska families and pets secure" class="about-main-img">
+                        <img src="images/hero-dog.webp" alt="Pet-safe fencing solutions by Maisey Fence - keeping Alaska families and pets secure" class="about-main-img" loading="lazy">
                     </div>
                     <div class="about-img-secondary">
-                        <img src="images/logo.png" alt="Maisey Fence LLC official logo - Anchorage fence contractor since 1994" class="about-secondary-img">
+                        <img src="images/logo.png" alt="Maisey Fence LLC official logo - Anchorage fence contractor since 1994" class="about-secondary-img" loading="lazy">
                     </div>
                     <div class="about-experience">
                         <span class="exp-number">30+</span>
@@ -596,22 +583,22 @@
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="images/gallery-cedar.webp" alt="Cedar privacy fence installation by Maisey Fence in Anchorage, Alaska" class="gallery-img">
+                    <img src="images/gallery-cedar.webp" alt="Cedar privacy fence installation by Maisey Fence in Anchorage, Alaska" class="gallery-img" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/gallery-chainlink.webp" alt="Chain link fence installation for residential property in Anchorage" class="gallery-img">
+                    <img src="images/gallery-chainlink.webp" alt="Chain link fence installation for residential property in Anchorage" class="gallery-img" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/gallery-family.webp" alt="Family-friendly backyard fence with secure gate in Alaska" class="gallery-img">
+                    <img src="images/gallery-family.webp" alt="Family-friendly backyard fence with secure gate in Alaska" class="gallery-img" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/gallery-repair.webp" alt="Professional fence repair service by Maisey Fence contractors" class="gallery-img">
+                    <img src="images/gallery-repair.webp" alt="Professional fence repair service by Maisey Fence contractors" class="gallery-img" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/gallery-1.webp" alt="Custom wood fence project completed in Anchorage neighborhood" class="gallery-img">
+                    <img src="images/gallery-1.webp" alt="Custom wood fence project completed in Anchorage neighborhood" class="gallery-img" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/gallery-sms.webp" alt="Residential fence installation project in Eagle River, Alaska" class="gallery-img">
+                    <img src="images/gallery-sms.webp" alt="Residential fence installation project in Eagle River, Alaska" class="gallery-img" loading="lazy">
                 </div>
             </div>
         </div>
@@ -792,8 +779,8 @@
                     </a>
                 </div>
                 <div class="latch-images">
-                    <img src="images/maisey-latch.webp" alt="The Maisey Latch - heavy-duty gate latch designed for Alaska's extreme weather conditions" class="latch-img-main">
-                    <img src="images/latch-channel.webp" alt="Maisey Latch channel system - adjusts to ground settling and freeze-thaw cycles" class="latch-img-secondary">
+                    <img src="images/maisey-latch.webp" alt="The Maisey Latch - heavy-duty gate latch designed for Alaska's extreme weather conditions" class="latch-img-main" loading="lazy">
+                    <img src="images/latch-channel.webp" alt="Maisey Latch channel system - adjusts to ground settling and freeze-thaw cycles" class="latch-img-secondary" loading="lazy">
                 </div>
             </div>
         </div>
