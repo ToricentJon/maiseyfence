@@ -51,9 +51,10 @@ ffForm.addEventListener('submit', async (e) => {
   if (!zip)    { setFieldError('field-zip',    true); valid = false; }
   if (!valid) return;
 
-  // Get selected radio values
+  // Get selected radio values and SMS consent
   const propertyType = (ffForm.querySelector('input[name="propertyType"]:checked') || {}).value || '';
   const projectType  = (ffForm.querySelector('input[name="projectType"]:checked')  || {}).value || '';
+  const smsConsent   = document.getElementById('ff-sms-consent').checked;
 
   // Loading state
   ffSubmitBtn.disabled    = true;
@@ -74,6 +75,7 @@ ffForm.addEventListener('submit', async (e) => {
         zip,
         propertyType,
         projectType,
+        smsConsent,
       })
     });
 
