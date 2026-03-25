@@ -1,6 +1,19 @@
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Card — dark theme matching maiseyfence.com ── */
 .ff-form-card {
+  background: #242434;
+  border-radius: 16px;
+  padding: 36px 32px 28px;
+  max-width: 560px;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  border: 1px solid rgba(232, 97, 106, 0.15);
 }
+
+/* ── Title ── */
 .ff-form-card h2 {
   font-size: 22px;
   font-weight: 700;
@@ -14,6 +27,8 @@
   color: #9ca3af;
   margin-bottom: 24px;
 }
+
+/* ── Grid layouts ── */
 .ff-grid-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -26,6 +41,8 @@
   gap: 16px;
   margin-bottom: 16px;
 }
+
+/* ── Field ── */
 .ff-field {
   display: flex;
   flex-direction: column;
@@ -70,6 +87,8 @@
   display: none;
 }
 .ff-field.ff-has-error .ff-field-error { display: block; }
+
+/* ── Radio group ── */
 .ff-radio-group {
   margin-bottom: 16px;
 }
@@ -96,7 +115,9 @@
   cursor: pointer;
   user-select: none;
 }
+/* Hide native radio */
 .ff-radio-row input[type="radio"] { display: none; }
+/* Custom radio circle */
 .ff-radio-row .ff-radio-dot {
   width: 20px;
   height: 20px;
@@ -123,6 +144,8 @@
 .ff-radio-row input[type="radio"]:checked + .ff-radio-dot::after {
   opacity: 1;
 }
+
+/* ── Service type 2x2 grid ── */
 .ff-radio-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -178,6 +201,7 @@
 }
 .ff-checkbox-text a { color: #E8616A; }
 
+/* ── Submit button ── */
 .ff-submit {
   width: 100%;
   padding: 16px;
@@ -194,6 +218,8 @@
 }
 .ff-submit:hover:not(:disabled) { background: #d4545d; }
 .ff-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+
+/* ── Form-level error ── */
 .ff-form-error {
   margin-top: 12px;
   font-size: 13px;
@@ -202,12 +228,16 @@
   display: none;
 }
 .ff-form-error.ff-visible { display: block; }
+
+/* ── Consent text ── */
 .ff-consent {
   margin-top: 14px;
   font-size: 11px;
   color: #6b7280;
   line-height: 1.5;
 }
+
+/* ── Success state ── */
 .ff-success {
   display: none;
   flex-direction: column;
@@ -239,7 +269,10 @@
   color: #9ca3af;
   max-width: 340px;
 }
+
+/* ── Mobile ── */
 @media (max-width: 480px) {
+  .ff-form-card { padding: 28px 20px 22px; }
   .ff-grid-2, .ff-grid-3 { grid-template-columns: 1fr; }
   .ff-radio-grid { grid-template-columns: 1fr; }
 }

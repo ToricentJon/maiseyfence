@@ -2,10 +2,10 @@
 const FIELDFUZE_ORG_ID = '0e1610bef796487b98ad';
 const FIELDFUZE_ENDPOINT = 'https://bk3y7lhnb9.execute-api.us-east-2.amazonaws.com/dev/leads/webform';
 
-const ffForm      = document.getElementById('ff-lead-form');
-const ffSubmitBtn = document.getElementById('ff-submit-btn');
-const ffFormError = document.getElementById('ff-form-error');
-const ffSuccess   = document.getElementById('ff-success');
+const form      = document.getElementById('ff-lead-form');
+const submitBtn = document.getElementById('ff-submit-btn');
+const formError = document.getElementById('ff-form-error');
+const success   = document.getElementById('ff-success');
 
 function setFieldError(fieldId, hasError) {
   const wrapper = document.getElementById(fieldId);
@@ -29,7 +29,7 @@ document.getElementById('ff-city').addEventListener('input',   () => setFieldErr
 document.getElementById('ff-state').addEventListener('input',  () => setFieldError('field-state',  false));
 document.getElementById('ff-zip').addEventListener('input',    () => setFieldError('field-zip',    false));
 
-ffForm.addEventListener('submit', async (e) => {
+form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   // Client-side validation
@@ -52,14 +52,14 @@ ffForm.addEventListener('submit', async (e) => {
   if (!valid) return;
 
   // Get selected radio values and SMS consent
-  const propertyType = (ffForm.querySelector('input[name="propertyType"]:checked') || {}).value || '';
-  const projectType  = (ffForm.querySelector('input[name="projectType"]:checked')  || {}).value || '';
+  const propertyType = (form.querySelector('input[name="propertyType"]:checked') || {}).value || '';
+  const projectType  = (form.querySelector('input[name="projectType"]:checked')  || {}).value || '';
   const smsConsent   = document.getElementById('ff-sms-consent').checked;
 
   // Loading state
-  ffSubmitBtn.disabled    = true;
-  ffSubmitBtn.textContent = 'Sending...';
-  ffFormError.classList.remove('ff-visible');
+  submitBtn.disabled    = true;
+  submitBtn.textContent = 'Sending...';
+  formError.classList.remove('ff-visible');
 
   try {
     const res = await fetch(`${FIELDFUZE_ENDPOINT}?orgID=${FIELDFUZE_ORG_ID}`, {
@@ -83,15 +83,15 @@ ffForm.addEventListener('submit', async (e) => {
 
     if (res.ok && data.success) {
       // Show success, hide form
-      ffForm.style.display   = 'none';
-      ffSuccess.classList.add('ff-visible');
+      form.style.display   = 'none';
+      success.classList.add('ff-visible');
     } else {
       throw new Error(data.error || 'Submission failed');
     }
   } catch (err) {
     console.error('Form submission error:', err);
-    ffFormError.classList.add('ff-visible');
-    ffSubmitBtn.disabled    = false;
-    ffSubmitBtn.textContent = 'Get Free Estimate';
+    formError.classList.add('ff-visible');
+    submitBtn.disabled    = false;
+    submitBtn.textContent = 'Get Free Estimate';
   }
 });
