@@ -1,5 +1,5 @@
-/* ── Reset ── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* ── Reset (scoped to form card) ── */
+.ff-form-card *, .ff-form-card *::before, .ff-form-card *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 /* ── Card — dark theme matching maiseyfence.com ── */
 .ff-form-card {
